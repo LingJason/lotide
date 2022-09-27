@@ -1,24 +1,22 @@
-const assertEqual = function(actual, expected) {
-  if (actual !== expected) {
-    console.log(`👎👎👎 Assertion Failed:${actual} !== ${expected}`);
-  } else if (actual === expected) {
-    console.log(`👍👍👍 Assertion Passed:${actual} === ${expected}`);
-  }
-};
+// const assertEqual = require('./assertEqual');
 
 const countLetters = function(words) {
   const result = {};
+  
   for (const word of words) {
     let lowercase = word.toLowerCase();
-    if(lowercase !== ' '){
-    if(result[lowercase]) {
-      result[lowercase] += 1;
-    } else {
-      result[lowercase] = 1;
+    if (lowercase === ' ') {
+      continue;
     }
+    
+    if (!result[lowercase]) {
+      result[lowercase] = 0;
     }
+    result[lowercase]++;
   }
   return result;
-}
+};
 
-console.log(countLetters("Jason Ling"));
+//console.log(countLetters("Jason Ling"));
+
+module.exports = countLetters;
