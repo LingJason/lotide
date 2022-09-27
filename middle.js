@@ -7,7 +7,7 @@
 // Middle
 const middle = function(array) {
   let length = array.length;
-  let newArray = []
+  let newArray = [];
   let odd = Math.floor(length / 2);
   let even = odd - 1;
   if (length <= 2) {
